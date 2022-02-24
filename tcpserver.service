@@ -1,0 +1,15 @@
+[Unit]
+Description=TCP Server
+After=network.target
+StartLimitInterval=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=60
+LimitNOFILE=600000
+User=root
+ExecStart=/usr/local/bin/tcpserver
+
+[Install]
+WantedBy=multi-user.target
